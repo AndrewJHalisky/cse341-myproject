@@ -1,0 +1,22 @@
+GET http://localhost:4000/groceries
+
+// Get message by id
+GET http://localhost:4000/groceries/667efbb801bffa3c5720ebf2
+
+// Create the message
+POST http://localhost:4000/groceries HTTP/1.1
+content-type: application/json
+{
+    "type": "fruit",
+    "item": "apple",
+    "price":"$2"
+}
+
+// PUT the response
+PUT http://localhost:4000/groceries/667eff9901bffa3c5720ebf5 HTTP/1.1
+content-type: application/json
+{  
+    "type": "vegetable",
+    "item": "broccoli stalk",
+    "price": "$6"
+}
