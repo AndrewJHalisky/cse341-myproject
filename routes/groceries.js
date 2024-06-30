@@ -6,6 +6,7 @@ const userController = require('../controllers/groceries');
 router.get('/', userController.getOneGroceries);
 router.get('/:id', userController.getMultipleGroceries);
 router.post('/', userController.createItem);
-router.get('/:id', userController.updateItem);
+router.put('/:id', userController.updateItem);
+router.delete('/:id', userController.deleteItem); 
 
 module.exports = router;
