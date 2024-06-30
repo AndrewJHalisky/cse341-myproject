@@ -1,112 +1,112 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "title": "My API",
-      "description": "Users API",
-      "version": "1.0.0"
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Users API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:4000",
+  "basePath": "/",
+  "schemes": [
+    "http", "https"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     },
-    "host": "localhost:4000",
-    "basePath": "/",
-    "schemes": [
-      "http", "https"
-    ],
-    "paths": {
-      "/": {
-        "get": {
-          "description": "",
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
+    "/users/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       },
-      "/users/": {
-        "get": {
-          "description": "",
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "OK"
-            }
-          }
-        },
-        "post": {
-          "description": "",
-          "parameters": [
-            {
-              "name": "body",
-              "in": "body",
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "firstName": {
-                    "example": "any"
-                  },
-                  "lastName": {
-                    "example": "any"
-                  },
-                  "email": {
-                    "example": "any"
-                  },
-                  "favoriteColor": {
-                    "example": "any"
-                  },
-                  "birthday": {
-                    "example": "any"
-                  }
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
                 }
               }
             }
-          ],
-          "responses": {
-            "204": {
-              "description": "No Content"
-            },
-            "500": {
-              "description": "Internal Server Error"
-            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
-      "/users/{id}": {
-        "get": {
-          "description": "",
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "required": true,
-              "type": "string"
-            }
-          ],
-          "responses": {
-            "204": {
-              "description": "No Content"
-            },
-            "500": {
-              "description": "Internal Server Error"
-            }
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
-        },
-        "delete": {
-          "description": "",
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "required": true,
-              "type": "string"
-            }
-          ],
-          "responses": {
-            "204": {
-              "description": "No Content"
-            }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           }
         }
       }
     }
   }
+}

@@ -1,0 +1,22 @@
+GET http://localhost:4000/media
+
+// Get message by id
+GET http://localhost:4000/media/667efbb801bffa3c5720ebf2
+
+// Create the message
+POST http://localhost:4000/media HTTP/1.1
+content-type: application/json
+{
+    "type": "movie",
+    "item": "Turning Red",
+    "price":"$30"
+}
+
+// PUT the response
+PUT http://localhost:4000/media/667efaa401bffa3c5720ebf1 HTTP/1.1
+content-type: application/json
+{  
+    "type": "game",
+    "item": "Hogwarts Legacy",
+    "price": "$40"
+}

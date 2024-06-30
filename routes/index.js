@@ -6,4 +6,6 @@ router.use('/', require('./swagger'));
 
 router.use('/groceries', require('./groceries'));
 
+router.use('/media', require('./media'));
+
 module.exports = router;
