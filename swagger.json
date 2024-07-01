@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Users API",
+    "description": "Groceries API",
     "version": "1.0.0"
   },
   "host": "localhost:4000",
@@ -21,7 +21,7 @@
         }
       }
     },
-    "/users/": {
+    "/groceries/": {
       "get": {
         "description": "",
         "produces": [
@@ -42,19 +42,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "type": {
                   "example": "any"
                 },
-                "lastName": {
+                "item": {
                   "example": "any"
                 },
-                "email": {
-                  "example": "any"
-                },
-                "favoriteColor": {
-                  "example": "any"
-                },
-                "birthday": {
+                "price": {
                   "example": "any"
                 }
               }
@@ -71,7 +65,88 @@
         }
       }
     },
-    "/users/{id}": {
+    "/media/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/groceries/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/media/{id}": {
       "get": {
         "description": "",
         "parameters": [
